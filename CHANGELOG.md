@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.0.8
+
 - Synced upstream `gemini-cli` to v0.1.19.
 - Updated documentation branding from **Gemini CLI** to **Qwen Code**.
 - Added multilingual docs links in `README.md`.
@@ -11,6 +12,7 @@
 - Miscellaneous improvements and bug fixes.
 
 ## 0.0.7
+
 - Synced upstream `gemini-cli` to v0.1.18.
 - Fixed MCP tools.
 - Fixed Web Fetch tool.
@@ -21,6 +23,7 @@
 - Separated static QR code and dynamic spinner components.
 
 ## 0.0.6
+
 - Added usage statistics logging for Qwen integration.
 - Made `/init` respect the configured context filename and aligned docs with `QWEN.md`.
 - Fixed `EPERM` error when running `qwen --sandbox` on macOS.
@@ -28,6 +31,7 @@
 - Fixed `glm-4.5` model request error.
 
 ## 0.0.5
+
 - Added Qwen OAuth login and up to 2,000 free requests per day.
 - Synced upstream `gemini-cli` to v0.1.17.
 - Added the `systemPromptMappings` configuration option.
