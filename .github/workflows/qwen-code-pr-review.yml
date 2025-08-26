@@ -113,17 +113,8 @@ jobs:
           settings_json: |-
             {
               "coreTools": [
-                "run_shell_command(echo)",
-                "run_shell_command(gh pr view)",
-                "run_shell_command(gh pr diff)",
-                "run_shell_command(gh pr comment)",
-                "run_shell_command(cat)",
-                "run_shell_command(head)",
-                "run_shell_command(tail)",
-                "run_shell_command(grep)",
-                "run_shell_command(find)",
-                "run_shell_command(ls)",
-                "run_shell_command(npm run)"
+                "run_shell_command",
+                "write_file"
               ],
               "sandbox": false
             }
