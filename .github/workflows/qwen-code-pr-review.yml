@@ -123,11 +123,7 @@ jobs:
                 "run_shell_command(grep)",
                 "run_shell_command(find)",
                 "run_shell_command(ls)",
-                "write_file",
-                "ReadFileTool",
-                "GlobTool",
-                "GrepTool",
-                "LSTool"
+                "run_shell_command(npm run)"
               ],
               "sandbox": false
             }
