@@ -36,7 +36,7 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           GITHUB_REPOSITORY: '${{ github.repository }}'
-        run: |
+        run: |-
           echo "🔍 Finding issues without labels..."
           NO_LABEL_ISSUES=$(gh issue list --repo ${{ github.repository }} --search "is:open is:issue no:label" --json number,title,body)
 
@@ -66,7 +66,7 @@ jobs:
           OPENAI_API_KEY: '${{ secrets.OPENAI_API_KEY }}'
           OPENAI_BASE_URL: '${{ secrets.OPENAI_BASE_URL }}'
           OPENAI_MODEL: '${{ secrets.OPENAI_MODEL }}'
-          settings_json: |
+          settings_json: |-
             {
               "maxSessionTurns": 25,
               "coreTools": [
