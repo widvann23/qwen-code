@@ -131,11 +131,10 @@ jobs:
             AVAILABLE TOOLS:
             - Shell commands: echo, gh pr view, gh pr diff, gh pr comment, cat, head, tail, grep
             - File operations: write_file only
-            
-            IMPORTANT: 
+
+            IMPORTANT:
             - Only use the shell commands listed above. Do not attempt to use other commands like ls, find, read_file, or any other tools.
             - Use the available shell commands to gather information. Do not ask for information to be provided.
-            - If you need to examine files, use cat, head, or tail commands only.
 
             Start by running these commands to gather the required data:
             1. Run: echo "$PR_DATA" to get PR details (JSON format)
@@ -143,7 +142,7 @@ jobs:
             3. Run: echo "$PR_NUMBER" to get the PR number
             4. Run: echo "$ADDITIONAL_INSTRUCTIONS" to see any specific review instructions from the user
             5. Run: gh pr diff $PR_NUMBER to see the full diff
-            6. For examining specific files, use ONLY: cat filename, head -50 filename, or tail -50 filename
+            6. For examining specific files, use: cat filename, head -50 filename, or tail -50 filename
             7. Use grep to search within files: grep "pattern" filename
 
             Additional Review Instructions:
