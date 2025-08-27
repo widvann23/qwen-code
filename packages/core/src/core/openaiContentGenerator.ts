@@ -130,6 +130,7 @@ export class OpenAIContentGenerator implements ContentGenerator {
           ? {
               'X-DashScope-CacheControl': 'enable',
               'X-DashScope-UserAgent': userAgent,
+              'X-DashScope-AuthType': contentGeneratorConfig.authType,
             }
           : {}),
     };
@@ -242,7 +243,10 @@ export class OpenAIContentGenerator implements ContentGenerator {
     // Add cache control to system and last messages for DashScope providers
     // Only add cache control to system message for non-streaming requests
     if (this.isDashScopeProvider()) {
-      messages = this.addDashScopeCacheControl(messages, streaming ? 'both' : 'system');
+      messages = this.addDashScopeCacheControl(
+        messages,
+        streaming ? 'both' : 'system',
+      );
     }
 
     // Build sampling parameters with clear priority:
@@ -279,7 +283,11 @@ export class OpenAIContentGenerator implements ContentGenerator {
     userPromptId: string,
   ): Promise<GenerateContentResponse> {
     const startTime = Date.now();
-    const createParams = await this.buildCreateParams(request, userPromptId, false);
+    const createParams = await this.buildCreateParams(
+      request,
+      userPromptId,
+      false,
+    );
 
     try {
       const completion = (await this.client.chat.completions.create(
@@ -370,7 +378,11 @@ export class OpenAIContentGenerator implements ContentGenerator {
     userPromptId: string,
   ): Promise<AsyncGenerator<GenerateContentResponse>> {
     const startTime = Date.now();
-    const createParams = await this.buildCreateParams(request, userPromptId, true);
+    const createParams = await this.buildCreateParams(
+      request,
+      userPromptId,
+      true,
+    );
 
     try {
       const stream = (await this.client.chat.completions.create(
@@ -951,7 +963,7 @@ export class OpenAIContentGenerator implements ContentGenerator {
     const mergedMessages =
       this.mergeConsecutiveAssistantMessages(cleanedMessages);
 
-      return mergedMessages;
+    return mergedMessages;
   }
 
   /**
