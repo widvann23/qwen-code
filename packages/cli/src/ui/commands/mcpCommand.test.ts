@@ -146,7 +146,7 @@ describe('mcpCommand', () => {
         type: 'message',
         messageType: 'info',
         content:
-          'No MCP servers configured. Please view MCP documentation in your browser: https://goo.gle/gemini-cli-docs-mcp or use the cli /docs command',
+          'No MCP servers configured. Please view MCP documentation in your browser: https://github.com/QwenLM/qwen-code/blob/main/docs/tools/mcp-server.md or use the cli /docs command',
       });
     });
   });
