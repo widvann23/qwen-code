@@ -59,7 +59,7 @@ const getMcpStatus = async (
 
   if (serverNames.length === 0 && blockedMcpServers.length === 0) {
     const docsUrl =
-      'https://github.com/QwenLM/qwen-code/blob/main/docs/tools/mcp-server.md';
+      'https://qwenlm.github.io/qwen-code-docs/en/tools/mcp-server/#how-to-set-up-your-mcp-server';
     return {
       type: 'message',
       messageType: 'info',
